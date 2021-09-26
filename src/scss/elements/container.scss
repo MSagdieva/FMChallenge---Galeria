@@ -1,0 +1,9 @@
+._container{
+    max-width: 645px;
+    margin:0 auto;
+    @media (max-width: $md4+px) {
+        max-width: none;
+        min-width: 200px;
+        padding: 0 10px;
+    }
+}
