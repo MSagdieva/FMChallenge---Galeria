@@ -161,9 +161,10 @@ ul {
 
 .main .gallery {
   display: grid;
-  grid-template-rows: 250px 35px 115px 88px 88px 92px 105px 155px 70px 80px 180px 40px;
-  grid-gap: 40px;
+  grid-template-rows: 250px 40px 35px 115px 88px 88px 92px 105px 155px 70px 80px 180px 40px;
+  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" "paint-1 paint-2 paint-3 paint-4" "paint-5 paint-2 paint-3 paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 paint-11" "paint-9 paint-6 paint-7 paint-11" "paint-9 paint-10 paint-7 paint-11" "paint-9 paint-10 paint-14 paint-11" "paint-9 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15";
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 40px;
 }
 
 .main .gallery__title {
@@ -171,6 +172,70 @@ ul {
   line-height: 1.25;
   margin-bottom: 16px;
   margin-top: 0;
+}
+
+.main .painting-description {
+  display: none;
+}
+
+.main #paint-1 {
+  grid-area: paint-1;
+}
+
+.main #paint-2 {
+  grid-area: paint-2;
+}
+
+.main #paint-3 {
+  grid-area: paint-3;
+}
+
+.main #paint-4 {
+  grid-area: paint-4;
+}
+
+.main #paint-5 {
+  grid-area: paint-5;
+}
+
+.main #paint-6 {
+  grid-area: paint-6;
+}
+
+.main #paint-7 {
+  grid-area: paint-7;
+}
+
+.main #paint-8 {
+  grid-area: paint-8;
+}
+
+.main #paint-9 {
+  grid-area: paint-9;
+}
+
+.main #paint-10 {
+  grid-area: paint-10;
+}
+
+.main #paint-11 {
+  grid-area: paint-11;
+}
+
+.main #paint-12 {
+  grid-area: paint-12;
+}
+
+.main #paint-13 {
+  grid-area: paint-13;
+}
+
+.main #paint-14 {
+  grid-area: paint-14;
+}
+
+.main #paint-15 {
+  grid-area: paint-15;
 }
 
 .main .subscribe-form {
