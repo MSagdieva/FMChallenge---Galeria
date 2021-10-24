@@ -161,8 +161,8 @@ ul {
 
 .main .gallery {
   display: grid;
-  grid-template-rows: 250px 40px 35px 115px 88px 88px 92px 105px 155px 70px 80px 180px 40px;
-  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" "paint-1 paint-2 paint-3 paint-4" "paint-5 paint-2 paint-3 paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 paint-11" "paint-9 paint-6 paint-7 paint-11" "paint-9 paint-10 paint-7 paint-11" "paint-9 paint-10 paint-14 paint-11" "paint-9 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15" "paint-12 paint-13 paint-14 paint-15";
+  grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 50px 260px;
+  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" ".       paint-2 paint-3 .      " ".       paint-2 .       .      " "paint-5 paint-2 .       paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 .       paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 .     " "paint-5 paint-6 paint-7 paint-12" ".       paint-6 paint-7 paint-12" "paint-9 paint-6 paint-7 paint-12" "paint-9 .       paint-7 paint-12" "paint-9 paint-10 paint-7 paint-12" "paint-9 paint-10 .      paint-12" "paint-9 paint-10 paint-11 paint-12" "paint-9 paint-10  paint-11 .     " "paint-9 .        paint-11 .     " "paint-9 .       paint-11 paint-15" "paint-9 paint-14 paint-11 paint-15" ".       paint-14 paint-11 paint-15" "paint-13 paint-14 paint-11 paint-15";
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 40px;
 }
@@ -174,7 +174,7 @@ ul {
   margin-top: 0;
 }
 
-.main .painting-description {
+.main .paintig-description {
   display: none;
 }
 
