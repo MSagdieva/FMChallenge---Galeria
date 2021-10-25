@@ -1,7 +1,7 @@
 .main {
     .gallery{
         display: grid;
-        grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 50px 260px;
+        grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 40px 260px;
         grid-template-areas: "paint-1 paint-2 paint-3 paint-4"
                             ".       paint-2 paint-3 .      "
                             ".       paint-2 .       .      "
@@ -25,6 +25,41 @@
                             "paint-13 paint-14 paint-11 paint-15";
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column-gap: 40px;
+        @media (max-width: $md2+px) {
+            grid-template-columns: 1fr 1fr;grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
+            grid-template-areas: 
+            "paint-1 paint-2" 
+            ".       paint-2"
+            "paint-3 paint-2"
+            "paint-3 .      "
+            "paint-3 paint-4"
+            ".       paint-4"
+            "paint-5 paint-4 " 
+            "paint-5 .      "
+            "paint-5 paint-6 " 
+            ".       paint-6"
+            "paint-7 paint-6" 
+            "paint-7 .     "
+            "paint-7 paint-8 "
+            "paint-7 .     "
+            "paint-7 paint-10"
+            ".       paint-10"
+            "paint-9 paint-10 "
+            "paint-9 .      "
+            "paint-9 paint-12"
+            ".       paint-12"
+            "paint-13 paint-12 "
+            "paint-13 .      "
+            "paint-13 paint-14 "
+            ".        paint-14"
+            "paint-11 paint-14 "
+            "paint-11 .     "
+            "paint-11 paint-15 "
+        }
+        @media (max-width: $md4+px) {
+            display: flex;
+            flex-direction: column;
+        }
         &__image{
             
             
