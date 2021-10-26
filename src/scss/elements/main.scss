@@ -1,7 +1,8 @@
 .main {
+    display:flex;
+    justify-content: center;
     .gallery{
         display: grid;
-        width: 100%;
         grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 40px 260px;
         grid-template-areas: "paint-1 paint-2 paint-3 paint-4"
                             ".       paint-2 paint-3 .      "
@@ -24,10 +25,11 @@
                             "paint-9 paint-14 paint-11 paint-15"
                             ".       paint-14 paint-11 paint-15"
                             "paint-13 paint-14 paint-11 paint-15";
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 300px 300px 300px 300px;
         grid-column-gap: 40px;
         @media (max-width: $md2+px) {
-            grid-template-columns: 1fr 1fr;grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
+            grid-template-columns: 300px 300px;
+            grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
             grid-template-areas: 
             "paint-1 paint-2" 
             ".       paint-2"
@@ -60,10 +62,19 @@
         @media (max-width: $md4+px) {
             display: flex;
             flex-direction: column;
+            .gallery__image{
+                margin-bottom: 40px;
+            }
         }
         &__image{
             position:relative;
-            background: none;
+            background: linear-gradient(-180deg, rgba(239, 250, 248,0)27%, rgba(2, 2, 2, 0.493)  );
+            .painting__name{
+                @include adaptive-value('font-size',
+                26,
+                14,
+                0);
+        } 
         }
         &__image:hover{
             background: linear-gradient(180deg, rgba(239, 250, 248, 0.35) 27%, rgba(114, 117, 117, 0.178));
@@ -72,6 +83,8 @@
         &__painting{
             position:relative;
             z-index: -1;
+            width:100%;
+            height: 100%;
             }
 	&__title {
         font-size: 2.4rem;
@@ -82,10 +95,21 @@
         margin-bottom: 16px;
         margin-top: 0;
     }
+
     }
-.paintig-description{
-    display:none;
-}
+    
+    .painting-description{
+        color:#fff;
+        font-family: $FontFamily;
+        position: relative;
+        top:-140px;
+        left: 40px;
+        width: 80%;
+
+        } 
+     
+    }
+
 #paint-1{
     grid-area:paint-1;
 }
@@ -130,110 +154,4 @@
 }
 #paint-15{
     grid-area:paint-15;
-}
-.subscribe-form {
-    max-width: 640px;
-    width: 100%;
-    @media (max-width:590px){
-        width: 80%;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 40px auto 94px auto;
-
-    &__button{
-        background-color: $primary;
-        border-radius: 50px;
-        height:56px;
-        width: 200px;
-        margin:0 0 0 16px; 
-        border:none;
-        color:$white;
-        font-size: 16px;
-        padding:12px 30px;
-        box-shadow: 0 5px 10px 2px rgba(76, 123, 273, 0.230414);
-        position:relative;
-        &::before{
-            content: '';
-            width: 100%;
-            height: 100%;
-            display:block;
-            top:0;
-            left:0;
-            z-index:30;
-            position:absolute;
-            background-color: rgba(255,255,255,0.2);
-            opacity:0; 
-            transition: opacity 0.3s;
-        }
-        &:hover{
-            &::before{
-                opacity:1;
-            }
-            
-        }
-        @media (max-width:590px){
-            width: 100%;
-            margin:0;
-        }
-    }
-}
-.email {
-    height:56px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 50px;
-    border: 1px $gray solid;
-    padding: 0 0 0 30px;
-    color:$VeryDarkBlue;
-    font-size:16px;
-    outline:none;
-    &::placeholder{
-        font-family: $FontFamily;
-        color:$gray;
-        font-size:16px;
-    }
-    &.error{
-        border: 1px $secondaryRed solid;
-    }
-
-}
-}    
-.error ~ .error-message{
-        display:block;
-        @media (max-width:590px){
-            position:relative;
-            left:0;
-            top:10px;
-            font-size: 12px;
-            bottom:0;
-        }
-        }
-.email-info{
-    display: block;
-    flex:1;
-    position:relative;
-    @media (max-width:590px){
-        margin-bottom:30px;
-    }
-    
-}
-.error-message{
-    font-size: 16px;
-    color:$secondaryRed;
-    font-style: italic;
-    position:absolute;
-    left:30px;
-    bottom:-30px;
-    display: none;
-}
-.illustration {
-    width: 100%;
-	&__image { 
-        width:100%;
-        object-fit: contain;
-
-    }
 }
