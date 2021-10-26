@@ -1,6 +1,7 @@
 .main {
     .gallery{
         display: grid;
+        width: 100%;
         grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 40px 260px;
         grid-template-areas: "paint-1 paint-2 paint-3 paint-4"
                             ".       paint-2 paint-3 .      "
@@ -61,11 +62,17 @@
             flex-direction: column;
         }
         &__image{
-            
-            
-            &__paintig{
-            }
+            position:relative;
+            background: none;
         }
+        &__image:hover{
+            background: linear-gradient(180deg, rgba(239, 250, 248, 0.35) 27%, rgba(114, 117, 117, 0.178));
+
+        }
+        &__painting{
+            position:relative;
+            z-index: -1;
+            }
 	&__title {
         font-size: 2.4rem;
         @media (max-width:590px){

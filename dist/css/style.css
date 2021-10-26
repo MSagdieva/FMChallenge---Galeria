@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 
 @import url("/src/scss/normalize.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;
+
+700&display=swap");
 html {
   font-size: 20px;
   color: #151f29;
@@ -23,7 +26,7 @@ ul {
 }
 
 .title {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   font-family: "Libre Franklin";
   font-weight: normal;
   text-align: center;
@@ -35,7 +38,7 @@ ul {
 }
 
 .text {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   font-weight: 300;
   line-height: 1.4;
   text-align: center;
@@ -43,7 +46,7 @@ ul {
 }
 
 .btn {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   line-height: 137.5%;
   text-align: center;
   cursor: pointer;
@@ -87,7 +90,7 @@ ul {
 
 .menu__link {
   font-size: 14px;
-  font-family: "Open Sans";
+  font-family: "Libre Baskerville", serif;
   font-weight: 600;
   margin: 0;
   padding: 20px;
@@ -161,10 +164,25 @@ ul {
 
 .main .gallery {
   display: grid;
+  width: 100%;
   grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 40px 260px;
-  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" ".       paint-2 paint-3 .      " ".       paint-2 .       .      " "paint-5 paint-2 .       paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 .       paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 .     " "paint-5 paint-6 paint-7 paint-12" ".       paint-6 paint-7 paint-12" "paint-9 paint-6 paint-7 paint-12" "paint-9 .       paint-7 paint-12" "paint-9 paint-10 paint-7 paint-12" "paint-9 paint-10 .      paint-12" "paint-9 paint-10 paint-11 paint-12" "paint-9 paint-10  paint-11 .     " "paint-9 .        paint-11 .     " "paint-9 .       paint-11 paint-15" "paint-9 paint-14 paint-11 paint-15" ".       paint-14 paint-11 paint-15" "paint-13 paint-14 paint-11 paint-15";
+  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" ".       paint-2 paint-3 .      " ".       paint-2 .       .      " "paint-5 paint-2 .       paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 .       paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 .     " "paint-5 paint-6 paint-7 paint-12" ".       paint-6 paint-7 paint-12" "paint-9 paint-6 paint-7 paint-12" "paint-9 .       paint-7 paint-12" "paint-9 paint-10 paint-7 paint-12" "paint-9 paint-10 .      paint-12" "paint-9 paint-10 paint-11 paint-12" "paint-9 paint-10  paint-11 .     " "paint-9 .        paint-11 .     " "paint-9 .       paint-11 paint-15" "paint-9 paint-14 paint-11 paint-15" ".       paint-14 paint-11 paint-15" "paint-13 paint-14 paint-11 paint-15";
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 40px;
+}
+
+.main .gallery__image {
+  position: relative;
+  background: none;
+}
+
+.main .gallery__image:hover {
+  background: linear-gradient(180deg, rgba(239, 250, 248, 0.35) 27%, rgba(114, 117, 117, 0.178));
+}
+
+.main .gallery__painting {
+  position: relative;
+  z-index: -1;
 }
 
 .main .gallery__title {
@@ -293,19 +311,19 @@ ul {
 }
 
 .main .email::-moz-placeholder {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   color: #969696;
   font-size: 16px;
 }
 
 .main .email:-ms-input-placeholder {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   color: #969696;
   font-size: 16px;
 }
 
 .main .email::placeholder {
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   color: #969696;
   font-size: 16px;
 }
@@ -405,7 +423,7 @@ ul {
 
 .footer__content {
   color: #fff;
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
   font-weight: 300;
 }
 
@@ -463,7 +481,7 @@ ul {
   text-align: center;
   font-size: 12px;
   line-height: 16px;
-  font-family: "Libre Franklin";
+  font-family: "Libre Baskerville", serif;
 }
 
 @media (max-width: 992px) {
@@ -474,7 +492,7 @@ ul {
   .main .gallery {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
-    grid-template-areas: "paint-1 paint-2"  ".       paint-2" "paint-3 paint-2" "paint-3 .      " "paint-3 paint-4" ".       paint-4" "paint-5 paint-4 "  "paint-5 .      " "paint-5 paint-6 "  ".       paint-6" "paint-7 paint-6"  "paint-7 .     " "paint-7 paint-8 " "paint-7 .     " "paint-7 paint-10" ".       paint-10" "paint-9 paint-10 " "paint-9 .      " "paint-9 paint-12" ".       paint-12" "paint-13 paint-12 " "paint-13 .      " "paint-13 paint-14 " ".        paint-14" "paint-11 paint-14 " "paint-11 .     " "paint-11 paint-15 ";
+    grid-template-areas: "paint-1 paint-2"  ".       paint-2" "paint-3 paint-2" "paint-3 .      " "paint-3 paint-4" ".       paint-4" "paint-5 paint-4 "  "paint-5 .      " "paint-5 paint-6 "  ".       paint-6" "paint-7 paint-6"  "paint-7 .     " "paint-7 paint-8 " "paint-7 .     " "paint-7 paint-10" ".       paint-10" "paint-9 paint-10 " "paint-9 .      " "paint-9 paint-12" ".       paint-12" "paint-13 paint-12 " "paint-13 .      " "paint-13 paint-14 " ".        paint-14" "paint-11 paint-14 " "paint-11 .     " "paint-11 paint-15 ";
   }
 }
 
