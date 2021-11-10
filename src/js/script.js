@@ -8,19 +8,23 @@ let modal_content=document.querySelector(".modal-one .modal-one__content");
 let modal_close=document.querySelector(".modal-one .close-button");
 let startSlideShow=document.querySelector(".start-button");
 let next=document.querySelector(".next-button");
+let back=document.querySelector(".back-button");
+let slide1=0;
+let pictures=[];
 modal_close.addEventListener("click", ()=>{
             modal.classList.remove('active');
         });
 
 function slide(i, pics){
             body.style.overflow="hidden";
+            slide1=i;
             modal_content.innerHTML = 
             "<img class='big_image' src="+pics[i].images.gallery+">";
             modal.classList.add('active');
         }
 
 fetch('data/data.json')
-    .then(response => response.json())
+    .then(response => {return response.json()})
     .then(pics=>{
         for(let i=0;i<pics.length;i++){
         PicsNames[i].insertAdjacentText("beforeend", pics[i].name);
@@ -33,10 +37,11 @@ fetch('data/data.json')
             "<div class='img_container'><img class='author_pics' src="+pics[i].artist.image+">"+
             "<img class='big_image_with_desc' src="+pics[i].images.gallery+"></div>";
             modal.classList.add('active');
+        next.addEventListener('click',slide.bind(null,slide1+1, pics));
+        back.addEventListener('click',slide.bind(null,slide1-1, pics));
         });
-        next.addEventListener('click',slide.bind(null,i+1, pics))
+
         startSlideShow.addEventListener('click',slide.bind(null, 0, pics));
 }
-})       
+})  .then(function(json){pictures=json})     
     .catch(error=>{console.log(error.data)});
-
