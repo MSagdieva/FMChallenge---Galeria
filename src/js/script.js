@@ -1,6 +1,4 @@
 // fetching info for description
-const body=document.body;
-const galleryImage=document.querySelectorAll(".gallery__image");
 let PicsNames=document.querySelectorAll(".painting__name");
 let PicsAuthor=document.querySelectorAll(".painting__author");
 let modal=document.querySelector(".modal-one");

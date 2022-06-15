@@ -15,4 +15,19 @@
         left: 40px;
         top: 11px;
     }
+    .start-button{
+        position: absolute;
+        top: 20px;
+        right: 100px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: $FontFamily;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-weight: 300;
+        &:hover{
+            font-family: $FontFamilyBold;
+            font-weight: 600;
+        }
+}
 }

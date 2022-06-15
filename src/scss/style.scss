@@ -8,10 +8,10 @@
 // ---------------main-components-styles-----------------------//
 html{
     font-size: 20px;
-color: $VeryDarkBlue;
-@media (max-width:590px){
-    font-size: 16px;
-}
+    color: $VeryDarkBlue;
+    @media (max-width:590px){
+        font-size: 16px;
+    }
 }
 body{
 box-sizing: border-box;
@@ -69,7 +69,6 @@ ul{
 @import 'elements/main';
 
 // ---------------sections styles-----------------------//
-
 @import 'elements/sections';
 
 // ---------------modal styles-----------------------//
