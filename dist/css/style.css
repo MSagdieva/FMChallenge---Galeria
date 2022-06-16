@@ -57,26 +57,30 @@ ul {
   margin: 0 auto;
 }
 
-.header {
+.header,
+.modal_header {
   position: relative;
   z-index: 1000;
   width: 100%;
   margin: 90px 0 60px 0;
 }
 
-.header__content {
+.header__content,
+.modal_header__content {
   text-align: center;
   width: 100%;
   height: 100%;
 }
 
-.header__icon-container {
+.header__icon-container,
+.modal_header__icon-container {
   position: absolute;
   left: 40px;
   top: 11px;
 }
 
-.header .start-button {
+.header .start-button,
+.modal_header .start-button {
   position: absolute;
   top: 20px;
   right: 100px;
@@ -88,7 +92,8 @@ ul {
   font-weight: 300;
 }
 
-.header .start-button:hover {
+.header .start-button:hover,
+.modal_header .start-button:hover {
   font-family: "Libre Baskerville", serif;
   font-weight: 600;
 }
@@ -347,8 +352,9 @@ ul {
   margin-top: 30px;
 }
 
-.modal-one {
-  position: absolute;
+.modal-one,
+.modal-two {
+  position: fixed;
   top: -100%;
   opacity: 0;
   left: 0;
@@ -356,89 +362,242 @@ ul {
   width: 100%;
   height: 100vh;
   transition: all .3s;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
 }
 
-.modal-one.active {
-  top: 0;
-  opacity: 1;
-  z-index: 9999;
-  background-color: white;
+.modal-one__content,
+.modal-two__content {
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  max-width: 100%;
+  padding: 0 30px;
 }
 
-.modal-one.active div {
-  color: black;
-}
-
-.modal-one.active .close-button,
-.back-button,
-.next-button {
-  display: block;
-  width: 60px;
-  height: 60px;
-  bottom: 30px;
-  text-align: center;
-  vertical-align: middle;
-  color: #fff;
+.modal-one .painting_year,
+.modal-two .painting_year {
   position: absolute;
-  font-size: 36px;
-  padding-top: 10px;
-  background-color: black;
-  border-radius: 50%;
+  color: #F3F3F3;
+  font-size: 200px;
+  z-index: -1;
+  top: -100px;
+  right: -100px;
+  line-height: 1;
 }
 
-.close-button {
+.modal-one .painting_name,
+.modal-two .painting_name {
+  font-size: 56px;
+}
+
+.modal-one .painting_head,
+.modal-two .painting_head {
+  background-color: white;
+  padding: 0 100px;
+  width: 400px;
+  position: absolute;
   top: 0;
-  left: 50%;
+  right: 0;
 }
 
-.back-button,
-.next-button {
-  bottom: 0;
+.modal-one .painting_description,
+.modal-two .painting_description {
+  color: #7D7D7D;
+  line-height: 2;
 }
 
-.back-button {
-  right: 50%;
+.modal-one .paint_images,
+.modal-two .paint_images {
+  display: flex;
 }
 
-.next-button {
-  left: 50%;
+.modal-one .paint_images .author_pics,
+.modal-two .paint_images .author_pics {
+  height: 128px;
+  width: 128px;
+  align-self: flex-end;
+  position: relative;
+  bottom: -64px;
+  right: -64px;
 }
 
-.modal-one.active .big_image_with_desc {
-  width: 300px;
+.modal-one .img_container,
+.modal-two .img_container {
+  width: 475px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 560px;
 }
 
-.big_image {
+.modal-one .img_container .big_image_with_desc,
+.modal-two .img_container .big_image_with_desc {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-one .first_column,
+.modal-two .first_column {
+  width: 60%;
+  position: relative;
+}
+
+.modal-one .second_column,
+.modal-two .second_column {
+  width: 30%;
+  position: relative;
+}
+
+.modal-one .modal_header,
+.modal-two .modal_header {
+  border-bottom: 1px solid #979797;
+  padding-left: 30px;
+}
+
+.modal-one .modal_header .header__content,
+.modal-two .modal_header .header__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-one .modal_footer,
+.modal-two .modal_footer {
+  height: 100px;
+  border-top: 1px solid #979797;
+  position: relative;
+}
+
+.modal-one .modal_footer:before,
+.modal-two .modal_footer:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-one .modal_footer h3,
+.modal-one .modal_footer p,
+.modal-two .modal_footer h3,
+.modal-two .modal_footer p {
+  color: #000;
+  padding-left: 30px;
+}
+
+.modal-one .modal_footer .footer__content,
+.modal-two .modal_footer .footer__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-one .modal_footer .buttons_wrapper,
+.modal-two .modal_footer .buttons_wrapper {
+  display: flex;
+}
+
+.modal-one .view_image_button,
+.modal-two .view_image_button {
+  background-color: #000000ad;
+  padding: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.modal-one .view_image_button span.view,
+.modal-two .view_image_button span.view {
+  color: #fff;
+  padding-left: 10px;
+}
+
+.modal-one .view_image_button:hover,
+.modal-two .view_image_button:hover {
+  background-color: #979797a6;
+}
+
+.modal-one .big_image,
+.modal-two .big_image {
   height: 100vh;
 }
 
-.footer__content {
+.modal-one.active,
+.modal-two.active {
+  top: 0;
+  opacity: 1;
+  z-index: 9999;
+}
+
+.modal-one.active {
+  color: black;
+  background-color: white;
+}
+
+.modal-two.active {
+  background-color: rgba(0, 0, 0, 0.712);
+  justify-content: center;
+}
+
+.modal-two.active .close-button {
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-one.active .back-button,
+.modal-one.active .next-button {
+  display: block;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.back-button.inactive svg path,
+.next-button.inactive svg path {
+  stroke: #D8D8D8;
+}
+
+.footer__content,
+.modal_footer__content {
   color: #fff;
   font-family: "Libre Baskerville", serif;
   font-weight: 300;
 }
 
-.footer__container {
+.footer__container,
+.modal_footer__container {
   font-size: calc(10px + 4 * ((100vw - 320px) / 1120px));
 }
 
-.footer__container hr.line {
+.footer__container hr.line,
+.modal_footer__container hr.line {
   border-width: 0;
   height: 1px;
   background-color: #a8a8a8;
 }
 
-.footer .socials {
+.footer .socials,
+.modal_footer .socials {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
 }
 
-.footer .socials__link:not(:last-child) {
+.footer .socials__link:not(:last-child),
+.modal_footer .socials__link:not(:last-child) {
   margin-right: 12px;
 }
 
-.footer .socials__icon {
+.footer .socials__icon,
+.modal_footer .socials__icon {
   position: relative;
   border: 1px solid rgba(76, 123, 243, 0.15);
   border-radius: 50%;
@@ -447,15 +606,18 @@ ul {
   transition: all 0.3s;
 }
 
-.footer .socials__icon:hover {
+.footer .socials__icon:hover,
+.modal_footer .socials__icon:hover {
   background-color: #4f7df3;
 }
 
-.footer .socials__icon:hover .icon {
+.footer .socials__icon:hover .icon,
+.modal_footer .socials__icon:hover .icon {
   color: #fff;
 }
 
-.footer .icon {
+.footer .icon,
+.modal_footer .icon {
   position: absolute;
   top: 50%;
   left: 50%;
