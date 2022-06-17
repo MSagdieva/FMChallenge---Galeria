@@ -12,6 +12,11 @@ html {
 
 body {
   box-sizing: border-box;
+  width: 100%;
+}
+
+body * {
+  box-sizing: border-box;
 }
 
 body a {
@@ -354,7 +359,7 @@ ul {
 
 .modal-one,
 .modal-two {
-  position: fixed;
+  position: absolute;
   top: -100%;
   opacity: 0;
   left: 0;
@@ -364,15 +369,20 @@ ul {
   transition: all .3s;
   flex-direction: column;
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
 }
 
 .modal-one__content,
 .modal-two__content {
+  box-sizing: border-box;
   font-family: "Libre Baskerville", serif;
   display: flex;
   max-width: 100%;
   padding: 0 30px;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .modal-one .painting_year,
@@ -381,30 +391,39 @@ ul {
   color: #F3F3F3;
   font-size: 200px;
   z-index: -1;
-  top: -100px;
-  right: -100px;
+  top: -140px;
+  right: -120px;
   line-height: 1;
 }
 
 .modal-one .painting_name,
 .modal-two .painting_name {
   font-size: 56px;
+  margin: 0;
 }
 
 .modal-one .painting_head,
 .modal-two .painting_head {
+  box-sizing: border-box;
   background-color: white;
-  padding: 0 100px;
+  padding: 20px 0 20px 65px;
   width: 400px;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 25%;
 }
 
 .modal-one .painting_description,
 .modal-two .painting_description {
+  position: relative;
   color: #7D7D7D;
   line-height: 2;
+  font-size: 14px;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 600;
+  width: 100%;
+  max-width: 345px;
+  margin-top: 100px;
 }
 
 .modal-one .paint_images,
@@ -418,8 +437,9 @@ ul {
   width: 128px;
   align-self: flex-end;
   position: relative;
-  bottom: -64px;
-  right: -64px;
+  bottom: -50px;
+  right: -50px;
+  z-index: 2;
 }
 
 .modal-one .img_container,
@@ -442,6 +462,21 @@ ul {
   position: relative;
 }
 
+.modal-one .source_link,
+.modal-two .source_link {
+  color: #979797;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  line-height: 1.3;
+  text-decoration: underline;
+}
+
+.modal-one .source_link:hover,
+.modal-two .source_link:hover {
+  color: #000000;
+}
+
 .modal-one .second_column,
 .modal-two .second_column {
   width: 30%;
@@ -450,14 +485,20 @@ ul {
 
 .modal-one .modal_header,
 .modal-two .modal_header {
+  margin: 0;
+  padding: 30px 0 30px 30px;
   border-bottom: 1px solid #979797;
-  padding-left: 30px;
 }
 
 .modal-one .modal_header .header__content,
 .modal-two .modal_header .header__content {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-one .modal_header .start-button,
+.modal-two .modal_header .start-button {
+  top: 50px;
 }
 
 .modal-one .modal_footer,
@@ -496,6 +537,7 @@ ul {
 .modal-one .modal_footer .buttons_wrapper,
 .modal-two .modal_footer .buttons_wrapper {
   display: flex;
+  align-items: center;
 }
 
 .modal-one .view_image_button,
@@ -529,6 +571,7 @@ ul {
   top: 0;
   opacity: 1;
   z-index: 9999;
+  position: fixed;
 }
 
 .modal-one.active {
@@ -536,14 +579,40 @@ ul {
   background-color: white;
 }
 
+.modal-two__content {
+  margin-top: 0;
+  justify-content: center;
+}
+
 .modal-two.active {
   background-color: rgba(0, 0, 0, 0.712);
   justify-content: center;
 }
 
+.modal-two.active .big_image {
+  max-height: 712px;
+}
+
+.modal-two.active .image_cont {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-two.active .close-button {
   color: #fff;
   cursor: pointer;
+  display: inline-block;
+  font-family: "Libre Baskerville", serif;
+  text-transform: uppercase;
+  align-self: flex-end;
+  padding-bottom: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-two.active .close-button:hover {
+  color: #FFFFFF;
+  opacity: 0.25;
 }
 
 .modal-one.active .back-button,
@@ -558,6 +627,11 @@ ul {
   font-size: 36px;
   line-height: 1.5;
   cursor: pointer;
+}
+
+.modal-one.active .back-button:hover svg path,
+.modal-one.active .next-button:hover svg path {
+  stroke: #A8A8A8;
 }
 
 .back-button.inactive svg path,
@@ -638,6 +712,16 @@ ul {
 }
 
 @media (max-width: 992px) {
+  .header__content img,
+  .modal_header__content img {
+    width: 100px;
+  }
+
+  .header .start-button,
+  .modal_header .start-button {
+    right: 10px;
+  }
+
   .menu__list {
     justify-content: flex-end;
   }
@@ -646,6 +730,56 @@ ul {
     grid-template-columns: 300px 300px;
     grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
     grid-template-areas: "paint-1 paint-2"  ".       paint-2" "paint-3 paint-2" "paint-3 .      " "paint-3 paint-4" ".       paint-4" "paint-5 paint-4 "  "paint-5 .      " "paint-5 paint-6 "  ".       paint-6" "paint-7 paint-6"  "paint-7 .     " "paint-7 paint-8 " "paint-7 .     " "paint-7 paint-10" ".       paint-10" "paint-9 paint-10 " "paint-9 .      " "paint-9 paint-12" ".       paint-12" "paint-13 paint-12 " "paint-13 .      " "paint-13 paint-14 " ".        paint-14" "paint-11 paint-14 " "paint-11 .     " "paint-11 paint-15 ";
+  }
+
+  .modal-one__content,
+  .modal-two__content {
+    max-width: 800px;
+    flex-wrap: wrap;
+    height: auto;
+    display: block;
+  }
+
+  .modal-one,
+  .modal-two {
+    display: block;
+  }
+
+  .modal-one .painting_head,
+  .modal-two .painting_head {
+    width: 400px;
+    right: 0;
+  }
+
+  .modal-one .paint_images .author_pics,
+  .modal-two .paint_images .author_pics {
+    align-self: center;
+    bottom: -16px;
+    right: -20px;
+  }
+
+  .modal-one .first_column,
+  .modal-two .first_column {
+    width: 100%;
+  }
+
+  .modal-one .source_link,
+  .modal-two .source_link {
+    margin-bottom: 30px;
+  }
+
+  .modal-one .second_column,
+  .modal-two .second_column {
+    width: 100%;
+    margin-top: 180px;
+  }
+
+  .modal-one.active {
+    overflow-y: scroll;
+  }
+
+  .modal-two.active .big_image {
+    max-height: 520px;
   }
 }
 
@@ -692,6 +826,11 @@ ul {
   .main-heading__content {
     background: linear-gradient(90deg, rgba(0, 91, 193, 0.6), rgba(0, 91, 193, 0.6) 30%, rgba(0, 0, 0, 0) 30%);
   }
+
+  .modal-one .paint_images,
+  .modal-two .paint_images {
+    display: block;
+  }
 }
 
 @media (max-width: 590px) {
@@ -704,11 +843,21 @@ ul {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   ._container {
     max-width: none;
     min-width: 200px;
     padding: 0 10px;
+  }
+
+  .header,
+  .modal_header {
+    margin: 60px 0 60px 0;
+  }
+
+  .header .start-button,
+  .modal_header .start-button {
+    font-size: 14px;
   }
 
   .menu__list {
@@ -848,5 +997,10 @@ ul {
 
   .main_content .ill {
     position: static;
+  }
+
+  .modal-one .painting_name,
+  .modal-two .painting_name {
+    font-size: 24px;
   }
 }
