@@ -69,6 +69,7 @@
         &__image{
             position:relative;
             background: linear-gradient(-180deg, rgba(239, 250, 248,0)27%, rgba(2, 2, 2, 0.493)  );
+            cursor: pointer;
             .painting__name{
                 @include adaptive-value('font-size',
                 26,
@@ -105,53 +106,100 @@
         top:-140px;
         left: 40px;
         width: 80%;
-
         } 
      
     }
 
 #paint-1{
     grid-area:paint-1;
+    @media (max-width: $md4+px) {
+        height: 250px;
+    }
 }
 #paint-2{
     grid-area:paint-2;
+    @media (max-width: $md4+px) {
+        height: 400px;
+    }
 }
 #paint-3{
     grid-area:paint-3;
+    @media (max-width: $md4+px) {
+        height: 285px;
+    }
 }
 #paint-4{
     grid-area:paint-4;
+    @media (max-width: $md4+px) {
+        height: 250px;
+    }
 }
 #paint-5{
     grid-area:paint-5;
+    @media (max-width: $md4+px) {
+        height: 340px;
+    }
 }
 #paint-6{
     grid-area:paint-6;
+    @media (max-width: $md4+px) {
+        height: 280px;
+    }
 }
 #paint-7{
     grid-area:paint-7;
+    @media (max-width: $md4+px) {
+        height: 500px;
+    }
+   
 }
 #paint-8{
     grid-area:paint-8;
+    @media (max-width: $md4+px) {
+        height: 250px;
+    }
 }
 #paint-9{
     grid-area:paint-9;
+    @media (max-width: $md4+px) {
+        height: 420px;
+    }
 }
 #paint-10{
     grid-area:paint-10;
+    @media (max-width: $md4+px) {
+        height: 260px;
+    }
 }
 #paint-11{
     grid-area:paint-11;
+    @media (max-width: $md4+px) {
+        order:14;
+        height: 525px;
+    }
 }
 #paint-12{
     grid-area:paint-12;
+    @media (max-width: $md4+px) {
+        height: 430px;
+    }
 }
 #paint-13{
     grid-area:paint-13;
+    @media (max-width: $md4+px) {
+        height: 260px;
+    }
 }
 #paint-14{
     grid-area:paint-14;
+    @media (max-width: $md4+px) {
+        height: 330px;
+    }
 }
 #paint-15{
     grid-area:paint-15;
+    @media (max-width: $md4+px) {
+        height: 340px;
+        order:15;
+    }
 }

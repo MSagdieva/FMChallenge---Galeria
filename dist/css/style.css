@@ -13,6 +13,7 @@ html {
 body {
   box-sizing: border-box;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body * {
@@ -58,13 +59,12 @@ ul {
 }
 
 ._container {
-  max-width: 645px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
 .header,
 .modal_header {
-  position: relative;
   z-index: 1000;
   width: 100%;
   margin: 90px 0 60px 0;
@@ -72,9 +72,11 @@ ul {
 
 .header__content,
 .modal_header__content {
-  text-align: center;
+  display: flex;
   width: 100%;
   height: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__icon-container,
@@ -86,9 +88,6 @@ ul {
 
 .header .start-button,
 .modal_header .start-button {
-  position: absolute;
-  top: 20px;
-  right: 100px;
   text-transform: uppercase;
   font-size: 18px;
   font-family: "Libre Baskerville", serif;
@@ -197,7 +196,7 @@ ul {
 .main .gallery {
   display: grid;
   grid-template-rows: 250px 36px 4px 36px 74px 40px 100px 40px 50px 40px 50px 40px 65px 40px 145px 10px 30px 10px 30px 40px 260px;
-  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" ".       paint-2 paint-3 .      " ".       paint-2 .       .      " "paint-5 paint-2 .       paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 .       paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 .     " "paint-5 paint-6 paint-7 paint-12" ".       paint-6 paint-7 paint-12" "paint-9 paint-6 paint-7 paint-12" "paint-9 .       paint-7 paint-12" "paint-9 paint-10 paint-7 paint-12" "paint-9 paint-10 .      paint-12" "paint-9 paint-10 paint-11 paint-12" "paint-9 paint-10  paint-11 .     " "paint-9 .        paint-11 .     " "paint-9 .       paint-11 paint-15" "paint-9 paint-14 paint-11 paint-15" ".       paint-14 paint-11 paint-15" "paint-13 paint-14 paint-11 paint-15";
+  grid-template-areas: "paint-1 paint-2 paint-3 paint-4" ".       paint-2 paint-3 .      " ".       paint-2 .       .      " "paint-5 paint-2 .       paint-8" "paint-5 paint-2 paint-7 paint-8" "paint-5 .       paint-7 paint-8" "paint-5 paint-6 paint-7 paint-8" "paint-5 paint-6 paint-7 .     " "paint-5 paint-6 paint-7 paint-12" ".       paint-6 paint-7 paint-12" "paint-9 paint-6 paint-7 paint-12" "paint-9 .       paint-7 paint-12" "paint-9 paint-10 paint-7 paint-12" "paint-9 paint-10 .      paint-12" "paint-9 paint-10 paint-11 paint-12" "paint-9 paint-10  paint-11 .     " "paint-9 .        paint-11 .     " "paint-9 .       paint-11 paint-15" "paint-9 paint-14 paint-11 paint-15" ".       paint-14 paint-11 paint-15" "paint-13 paint-14 paint-11 paint-15";
   grid-template-columns: 300px 300px 300px 300px;
   grid-column-gap: 40px;
 }
@@ -205,6 +204,7 @@ ul {
 .main .gallery__image {
   position: relative;
   background: linear-gradient(-180deg, rgba(239, 250, 248, 0) 27%, rgba(2, 2, 2, 0.493));
+  cursor: pointer;
 }
 
 .main .gallery__image .painting__name {
@@ -360,13 +360,13 @@ ul {
 .modal-one,
 .modal-two {
   position: absolute;
-  top: -100%;
+  top: -500%;
   opacity: 0;
   left: 0;
   background-color: transparent;
   width: 100%;
   height: 100vh;
-  transition: all .3s;
+  transition: all .5s;
   flex-direction: column;
   display: flex;
   box-sizing: border-box;
@@ -379,9 +379,9 @@ ul {
   font-family: "Libre Baskerville", serif;
   display: flex;
   max-width: 100%;
-  padding: 0 30px;
+  padding: 0 100px 0 30px;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
 }
 
@@ -391,26 +391,32 @@ ul {
   color: #F3F3F3;
   font-size: 200px;
   z-index: -1;
-  top: -140px;
+  top: -110px;
   right: -120px;
   line-height: 1;
 }
 
 .modal-one .painting_name,
 .modal-two .painting_name {
-  font-size: 56px;
+  font-size: 2rem;
   margin: 0;
+}
+
+.modal-one .image_info_container,
+.modal-two .image_info_container {
+  position: relative;
 }
 
 .modal-one .painting_head,
 .modal-two .painting_head {
   box-sizing: border-box;
   background-color: white;
-  padding: 20px 0 20px 65px;
-  width: 400px;
+  padding: 0 0 20px 40px;
+  max-width: 400px;
   position: absolute;
-  top: 0;
-  right: 25%;
+  top: -2px;
+  right: 100px;
+  z-index: 2;
 }
 
 .modal-one .painting_description,
@@ -444,10 +450,11 @@ ul {
 
 .modal-one .img_container,
 .modal-two .img_container {
-  width: 475px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 560px;
+  width: 45%;
+  max-height: 80vh;
+  position: relative;
 }
 
 .modal-one .img_container .big_image_with_desc,
@@ -479,14 +486,14 @@ ul {
 
 .modal-one .second_column,
 .modal-two .second_column {
-  width: 30%;
+  width: 40%;
   position: relative;
 }
 
 .modal-one .modal_header,
 .modal-two .modal_header {
   margin: 0;
-  padding: 30px 0 30px 30px;
+  padding: 30px;
   border-bottom: 1px solid #979797;
 }
 
@@ -508,8 +515,8 @@ ul {
   position: relative;
 }
 
-.modal-one .modal_footer:before,
-.modal-two .modal_footer:before {
+.modal-one .modal_footer-indicator,
+.modal-two .modal_footer-indicator {
   content: "";
   display: block;
   height: 2px;
@@ -518,6 +525,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
+  transition: width 0.2s ease-in-out;
 }
 
 .modal-one .modal_footer h3,
@@ -526,6 +534,16 @@ ul {
 .modal-two .modal_footer p {
   color: #000;
   padding-left: 30px;
+}
+
+.modal-one .modal_footer h3.footer-painring_name,
+.modal-two .modal_footer h3.footer-painring_name {
+  font-size: 18px;
+}
+
+.modal-one .modal_footer p.footer-artist_name,
+.modal-two .modal_footer p.footer-artist_name {
+  font-size: 13px;
 }
 
 .modal-one .modal_footer .footer__content,
@@ -572,11 +590,21 @@ ul {
   opacity: 1;
   z-index: 9999;
   position: fixed;
+  transition: all .3s;
+}
+
+.modal-one.active .modal-one__content,
+.modal-two.active .modal-one__content {
+  display: flex;
 }
 
 .modal-one.active {
   color: black;
   background-color: white;
+}
+
+.modal-two.active {
+  padding-top: 65px;
 }
 
 .modal-two__content {
@@ -587,10 +615,11 @@ ul {
 .modal-two.active {
   background-color: rgba(0, 0, 0, 0.712);
   justify-content: center;
+  transition: all .3s;
 }
 
 .modal-two.active .big_image {
-  max-height: 712px;
+  max-height: 80%;
 }
 
 .modal-two.active .image_cont {
@@ -722,6 +751,10 @@ ul {
     right: 10px;
   }
 
+  .header__content:not(.modal__header__content) {
+    padding: 0 30px;
+  }
+
   .menu__list {
     justify-content: flex-end;
   }
@@ -729,33 +762,44 @@ ul {
   .main .gallery {
     grid-template-columns: 300px 300px;
     grid-template-rows: 250px 40px 110px 40px 135px 40px 75px 40px 225px 40px 15px 40px 250px 40px 155px 40px 65px 40px 315px 40px 75px 40px 145px 40px 145px 40px 340px;
-    grid-template-areas: "paint-1 paint-2"  ".       paint-2" "paint-3 paint-2" "paint-3 .      " "paint-3 paint-4" ".       paint-4" "paint-5 paint-4 "  "paint-5 .      " "paint-5 paint-6 "  ".       paint-6" "paint-7 paint-6"  "paint-7 .     " "paint-7 paint-8 " "paint-7 .     " "paint-7 paint-10" ".       paint-10" "paint-9 paint-10 " "paint-9 .      " "paint-9 paint-12" ".       paint-12" "paint-13 paint-12 " "paint-13 .      " "paint-13 paint-14 " ".        paint-14" "paint-11 paint-14 " "paint-11 .     " "paint-11 paint-15 ";
+    grid-template-areas: "paint-1 paint-2"  ".       paint-2" "paint-3 paint-2" "paint-3 .      " "paint-3 paint-4" ".       paint-4" "paint-5 paint-4 "  "paint-5 .      " "paint-5 paint-6 "  ".       paint-6" "paint-7 paint-6"  "paint-7 .     " "paint-7 paint-8 " "paint-7 .     " "paint-7 paint-10" ".       paint-10" "paint-9 paint-10 " "paint-9 .      " "paint-9 paint-12" ".       paint-12" "paint-13 paint-12 " "paint-13 .      " "paint-13 paint-14 " ".        paint-14" "paint-11 paint-14 " "paint-11 .     " "paint-11 paint-15 ";
   }
 
   .modal-one__content,
   .modal-two__content {
-    max-width: 800px;
-    flex-wrap: wrap;
-    height: auto;
-    display: block;
+    margin-bottom: 30px;
   }
 
-  .modal-one,
-  .modal-two {
-    display: block;
+  .modal-one .painting_year,
+  .modal-two .painting_year {
+    font-size: 200px;
+    right: initial;
+    left: -120px;
   }
 
   .modal-one .painting_head,
   .modal-two .painting_head {
-    width: 400px;
+    width: 100%;
     right: 0;
+  }
+
+  .modal-one .painting_description,
+  .modal-two .painting_description {
+    margin: 0 auto 50px auto;
+    max-width: 70%;
   }
 
   .modal-one .paint_images .author_pics,
   .modal-two .paint_images .author_pics {
     align-self: center;
-    bottom: -16px;
+    bottom: 125px;
     right: -20px;
+  }
+
+  .modal-one .img_container,
+  .modal-two .img_container {
+    width: 100%;
+    max-height: initial;
   }
 
   .modal-one .first_column,
@@ -766,12 +810,18 @@ ul {
   .modal-one .source_link,
   .modal-two .source_link {
     margin-bottom: 30px;
+    margin-left: 110px;
   }
 
   .modal-one .second_column,
   .modal-two .second_column {
     width: 100%;
     margin-top: 180px;
+  }
+
+  .modal-one.active .modal-one__content,
+  .modal-two.active .modal-one__content {
+    display: block;
   }
 
   .modal-one.active {
@@ -978,6 +1028,68 @@ ul {
     margin-bottom: 40px;
   }
 
+  #paint-1 {
+    height: 250px;
+  }
+
+  #paint-2 {
+    height: 400px;
+  }
+
+  #paint-3 {
+    height: 285px;
+  }
+
+  #paint-4 {
+    height: 250px;
+  }
+
+  #paint-5 {
+    height: 340px;
+  }
+
+  #paint-6 {
+    height: 280px;
+  }
+
+  #paint-7 {
+    height: 500px;
+  }
+
+  #paint-8 {
+    height: 250px;
+  }
+
+  #paint-9 {
+    height: 420px;
+  }
+
+  #paint-10 {
+    height: 260px;
+  }
+
+  #paint-11 {
+    order: 14;
+    height: 525px;
+  }
+
+  #paint-12 {
+    height: 430px;
+  }
+
+  #paint-13 {
+    height: 260px;
+  }
+
+  #paint-14 {
+    height: 330px;
+  }
+
+  #paint-15 {
+    height: 340px;
+    order: 15;
+  }
+
   .info-block__container .info-block ~ .info-block {
     margin-left: 0;
   }
@@ -999,8 +1111,62 @@ ul {
     position: static;
   }
 
+  .modal-one .painting_year,
+  .modal-two .painting_year {
+    right: initial;
+    left: 50px;
+    font-size: 100px;
+    top: -50px;
+  }
+
   .modal-one .painting_name,
   .modal-two .painting_name {
     font-size: 24px;
+  }
+
+  .modal-one .painting_head,
+  .modal-two .painting_head {
+    top: initial;
+    right: initial;
+    left: 0;
+    width: 70%;
+    bottom: 50px;
+    padding: 10px;
+  }
+
+  .modal-one .painting_description,
+  .modal-two .painting_description {
+    margin-top: 30px;
+  }
+
+  .modal-one .paint_images .author_pics,
+  .modal-two .paint_images .author_pics {
+    height: 64px;
+    width: 64px;
+    right: initial;
+    left: 0;
+    bottom: -50px;
+  }
+
+  .modal-one .img_container,
+  .modal-two .img_container {
+    height: 280px;
+  }
+
+  .modal-one .second_column,
+  .modal-two .second_column {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .modal-one .view_image_button,
+  .modal-two .view_image_button {
+    top: 20px;
+    bottom: initial;
+    left: 20px;
+  }
+
+  .modal-two.active .big_image {
+    max-height: 260px;
   }
 }

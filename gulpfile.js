@@ -45,7 +45,6 @@ let {src, dest} = require('gulp'),
     ttf2woff = require('gulp-ttf2woff')
     ttf2woff2 = require('gulp-ttf2woff2')
     fonter = require('gulp-fonter')
-    prettify = require('gulp-html-prettify');
 
 function browserSync(params){
     browsersync.init({
@@ -62,7 +61,6 @@ function html(){
         basepath: '@file'
     }))
     .pipe(webphtml())
-    .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream())
 }

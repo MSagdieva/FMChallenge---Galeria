@@ -1,12 +1,12 @@
 .modal-one, .modal-two{
     position: absolute;
-    top: -100%;
+    top: -500%;
     opacity: 0;
     left: 0;
     background-color: transparent;
     width: 100%;
     height: 100vh;
-    transition: all .3s;
+    transition: all .5s;
     flex-direction: column;
     display: flex;
     box-sizing: border-box;
@@ -16,47 +16,64 @@
         font-family: $FontFamily;
         display: flex;
         max-width: 100%;
-        padding: 0 30px;
+        padding: 0 100px 0 30px;
         justify-content: space-between;
-        margin-top: 50px;
+        margin-top: 30px;
         width: 100%;
         @media (max-width: $md2+px){
-            max-width: 800px;
-            flex-wrap: wrap;
-            height: auto;
-            display: block;
+            margin-bottom: 30px;
         }
-    }
-    @media (max-width: $md2+px){
-        display: block;
     }
     .painting_year{
         position: absolute;
         color: #F3F3F3;
         font-size: 200px;
         z-index: -1;
-        top: -140px;
+        top: -110px;
         right: -120px;
         line-height: 1;
+        @media (max-width: $md2+px){
+            font-size: 200px;
+            right: initial;
+            left: -120px;
+        }
+        @media (max-width: $md4+px){
+            right: initial;
+            left: 50px;
+            font-size: 100px;
+            top: -50px;
+        }
     }
     .painting_name{
-        font-size: 56px;
+        font-size: 2rem;
         margin: 0;
         @media (max-width: $md4+px){
             font-size: 24px;
         }
     }
+    .image_info_container{
+        position: relative;
+    }
     .painting_head{
         box-sizing: border-box;
         background-color: white;
-        padding: 20px 0 20px 65px;
-        width: 400px;
+        padding: 0 0 20px 40px;
+        max-width: 400px;
         position: absolute;
-        top: 0;
-        right: 25%;
+        top: -2px;
+        right: 100px;
+        z-index: 2;
         @media (max-width: $md2+px){
-            width: 400px;
+            width: 100%;
             right: 0;
+        }
+        @media (max-width: $md4+px){
+            top: initial;
+            right: initial;
+            left: 0;
+            width: 70%;
+            bottom: 50px;
+            padding: 10px;
         }
     }
     .painting_description{
@@ -69,6 +86,13 @@
         width: 100%;
         max-width: 345px;
         margin-top: 100px;
+        @media (max-width: $md2+px){
+            margin: 0 auto 50px auto;
+            max-width: 70%;
+        }
+        @media (max-width: $md4+px){
+            margin-top: 30px;
+        }
     }
     .paint_images{
         display: flex;
@@ -82,8 +106,15 @@
             z-index: 2;
             @media (max-width: $md2+px){
                 align-self: center;
-                bottom: -16px;
+                bottom: 125px;
                 right: -20px;
+            }
+            @media (max-width: $md4+px){
+                height: 64px;
+                width: 64px;
+                right: initial;
+                left:0;
+                bottom: -50px;
             }
         }
         @media (max-width: $md3+px){
@@ -92,10 +123,17 @@
     }
 
     .img_container{
-        width: 475px;
         object-fit: cover;
-        height: 560px;
-        
+        width: 45%;
+        max-height: 80vh;
+        position: relative;
+        @media (max-width: $md2+px){
+            width: 100%;
+            max-height: initial;
+        }
+        @media (max-width: $md4+px){
+            height: 280px;
+        }
         .big_image_with_desc{
             width: 100%;
             height: 100%;
@@ -121,20 +159,25 @@
         }
         @media (max-width: $md2+px){
             margin-bottom: 30px;
+            margin-left: 110px;
         }
     }
 
     .second_column{
-        width: 30%;
+        width: 40%;
         position: relative;
         @media (max-width: $md2+px){
             width: 100%;
             margin-top: 180px;
         }
+        @media (max-width: $md4+px){
+            width: 100%;
+            margin-top: 60px;
+        }
     }
     .modal_header{
         margin: 0;
-        padding: 30px 0 30px 30px;
+        padding: 30px;
         border-bottom: 1px solid #979797;
         .header__content{
             display: flex;
@@ -148,7 +191,7 @@
         height: 100px;
         border-top: 1px solid #979797;
         position :relative;
-        &:before{
+        &-indicator{
             content: "";
             display: block;
             height: 2px;
@@ -157,11 +200,18 @@
             position: absolute;
             top:0;
             left:0;
+            transition: width 0.2s ease-in-out;
         }
         h3, p {
             color:#000;
             padding-left: 30px;
          }
+        h3.footer-painring_name{
+            font-size: 18px;
+        }
+        p.footer-artist_name{
+            font-size: 13px;
+        }
         .footer__content{
             display: flex;
             justify-content: space-between;
@@ -177,8 +227,8 @@
         background-color: #000000ad;
         padding: 20px;
         position: absolute;
-        bottom:20px;
-        left:20px;
+        bottom: 20px;
+        left: 20px;
         cursor: pointer;
         span.view{
         color: #fff;
@@ -186,6 +236,11 @@
         }
         &:hover{
             background-color: #979797a6;
+        }
+        @media (max-width: $md4+px){
+            top: 20px;
+            bottom: initial;
+            left: 20px;
         }
     }
 
@@ -198,6 +253,14 @@
     opacity:1;
     z-index:9999;
     position: fixed;
+    transition: all .3s;
+    .modal-one__content{
+            display: flex;
+        @media (max-width: $md2+px)
+        { 
+            display: block;
+        }
+    }
 }
 .modal-one.active{
     color: black;
@@ -206,6 +269,9 @@
         overflow-y: scroll;
     }
 }
+.modal-two.active{
+    padding-top: 65px;
+}
 .modal-two__content{
     margin-top:0;
     justify-content: center;
@@ -213,10 +279,14 @@
 .modal-two.active{
     background-color: rgba(0, 0, 0, 0.712);
     justify-content: center;
+    transition: all .3s;
     .big_image{
-        max-height: 712px;
+        max-height: 80%;
         @media (max-width: $md2+px){
             max-height: 520px;
+        }
+        @media (max-width: $md4+px){
+            max-height: 260px;
         }
     }
     .image_cont{
