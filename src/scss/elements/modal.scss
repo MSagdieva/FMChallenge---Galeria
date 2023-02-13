@@ -39,9 +39,10 @@
         }
         @media (max-width: $md4+px){
             right: initial;
-            left: 50px;
+            left: initial;
+            right: 0;
             font-size: 100px;
-            top: -50px;
+            top: -70px;
         }
     }
     .painting_name{
@@ -73,7 +74,7 @@
             left: 0;
             width: 70%;
             bottom: 50px;
-            padding: 10px;
+            padding: 20px;
         }
     }
     .painting_description{
@@ -92,6 +93,7 @@
         }
         @media (max-width: $md4+px){
             margin-top: 30px;
+            max-width: none;
         }
     }
     .paint_images{
@@ -113,7 +115,7 @@
                 height: 64px;
                 width: 64px;
                 right: initial;
-                left:0;
+                left: 15px;
                 bottom: -50px;
             }
         }
@@ -160,6 +162,9 @@
         @media (max-width: $md2+px){
             margin-bottom: 30px;
             margin-left: 110px;
+        }
+        @media (max-width: $md4+px){
+            margin-left: 0;
         }
     }
 
@@ -229,18 +234,30 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        line-height: 2;
+
+        font-family: $FontFamily;
+        font-size: 10px;
         cursor: pointer;
         span.view{
-        color: #fff;
-        padding-left:10px;
+            color: #fff;
+            padding-left: 10px;
         }
         &:hover{
             background-color: #979797a6;
+        }
+        @media (max-width: $md3+px){
+            left: initial;
+            right: 20px;
         }
         @media (max-width: $md4+px){
             top: 20px;
             bottom: initial;
             left: 20px;
+            width: 55%;
+            white-space: nowrap;
         }
     }
 

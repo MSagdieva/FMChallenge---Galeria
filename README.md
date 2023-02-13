@@ -13,7 +13,6 @@ This is a solution to the [Galeria slideshow site challenge on Frontend Mentor](
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -39,6 +38,48 @@ Users should be able to:
 - Live Site URL: [Live Site](https://fmc-hallenge-galeria.vercel.app/)
 
 ## My process
+```js
+// function fetching info for description
+function fetchInfoForDescription(){
+// get data
+fetch('data/data.json')
+    // return json data
+    .then(response => {return response.json()})
+    // get paintings data
+    .then((pics)=>{
+        // assignment painting in arrays
+        Array.from(pics).map((pic, i)=>{
+            // insert painting name in name element
+        picsNames[i].insertAdjacentText("beforeend", pic.name);
+            // insert painting author in author element
+        picsAuthor[i].insertAdjacentText("beforeend", pic.artist.name);
+            // insert painting info in paintings array
+        pictures.push(pictInfoFill(pic));
+            // insert painting name in names array
+        names.push({"name": pic.name,"artist_name": pic.artist.name, "image":pic.images.gallery});
+            // add gallery images click action
+        galleryImage[i].addEventListener('click',()=>{
+            slideNumber=i;
+            nextSlide=i+1;
+            prevSlide=i-1;
+            imageInfoSlide(i, pictures);
+            setAdditionalPaintingData(i);
+        });
+    })
+        // add Start slideshow click action
+        startSlideShow.addEventListener('click',()=>{
+            imageInfoSlide(0, pictures);
+            modalFooterIndicator.style.width = `${getSliderIndicatorPosition(0)}px`;
+        });
+        setInactiveButtons(0);
+        pictNameArtNameChange(0);
+        addViewImageButton(0);
+})  
+    // fetching errors catch
+    .catch(error=>{console.log(error)});
+};
+
+```
 
 ### Built with
 
