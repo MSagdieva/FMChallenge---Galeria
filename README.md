@@ -26,16 +26,11 @@ Users should be able to:
 
 ### Screenshots
 
-![ScreenShot1](https://raw.githubusercontent.com/MSagdieva/FMChallenge---Galeria
-/main/ScreenshotGallery.png)
-![ScreenShot1](https://raw.githubusercontent.com/MSagdieva/FMChallenge---Galeria
-/main/ScreenshotGallery2.png)
-![ScreenShot1](https://raw.githubusercontent.com/MSagdieva/FMChallenge---Galeria
-/main/ScreenshotGallery5.png)
-![ScreenShot1](https://raw.githubusercontent.com/MSagdieva/FMChallenge---Galeria
-/main/ScreenshotGallery3.png)
-![ScreenShot1](https://raw.githubusercontent.com/MSagdieva/FMChallenge---Galeria
-/main/ScreenshotGallery4.png)
+![ScreenShot1](https://github.com/MSagdieva/FMChallenge---Galeria/blob/main/screenshotGallery.png)
+![ScreenShot2](https://github.com/MSagdieva/FMChallenge---Galeria/blob/main/screenshotGallery2.png)
+![ScreenShot3](https://github.com/MSagdieva/FMChallenge---Galeria/blob/main/screenshotGallery5.png)
+![ScreenShot4](https://github.com/MSagdieva/FMChallenge---Galeria/blob/main/screenshotGallery3.png)
+![ScreenShot5](https://github.com/MSagdieva/FMChallenge---Galeria/blob/main/screenshotGallery4.png)
 
 
 ### Links
